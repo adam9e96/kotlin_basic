@@ -16,11 +16,13 @@ fun main() {
     val name2: String // String 으로 형으로 추론되어 오류가 안뜸 // 이렇게 선언만하고 할당을 안할때도 타입을 명시해야 오류안뜸
 //    val name3 // name3 변수가 어떤 타입으로 올 지 알 수 없어서 오류가 뜸
 
-    // val은 값을 변경할 수 없는 변수이므로 값을 재할당을 하면 다음과 같이 컴파일 오류가 남.
+    // val 은 값을 변경할 수 없는 변수이므로 값을 재할당을 하면 다음과 같이 컴파일 오류가 남.
 //    pi = .31415923 // 오류 Val cannot be reassigned
 
     println(name)
-    // 값을 변경하고 싶을 떄는 var을 사용해야 됨. var로 정의된 변수는 값을 바꿀 수 있음.
+//    println(name2)
+    // 값을 변경하고 싶을 떄는 var 을 사용해야 됨. var로 정의된 변수는 값을 바꿀 수 있음.
+
     var age = 21 // 형추론 Int
     println(age) // 21
     age = 25
