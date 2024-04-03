@@ -14,7 +14,7 @@ fun main() {
      * 코틀린은 형추론을 통해서 자료형을 명시하지 않아도 알아서 추론.
      * 정수의 경우에는 숫자가 작아도 Int 형으로 추론하기 때문에 Byte 나 Short 같은 작은 범위를 사용할 때는 자료형을 지정해야 함.
      */
-    val num1 = 10 // 타입을 따로 안적어주면 정수의 경우 Int로 타입추론을 함. Short, Byte로 저장하고 싶으면 직접 자료형을 지정해야함.
+    val num1 = 10 // 타입을 따로 안적어주면 정수의 경우 Int로 타입추론을 함. Short, Byte 로 저장하고 싶으면 직접 자료형을 지정해야함.
     /*
      * 1) Int : 정수
      * 소수점이 없는 정수값을 저장할 때 사용.
@@ -37,13 +37,14 @@ fun main() {
     var longValue: Long
     longValue = 3_141592L
     // L을 안붙이고 형추론을 시도하면 Int로 인식함
-    var longValue2 = 3_14159233 // Int 로 인식함
+    var longValue2 = 3_14159233L // Long 로 인식함
 
     println(longValue)
+    println(longValue2)
 
     /*
-     * 3) Short와 Byte : 정수
-     * 역시 정숫값을 저장할 때 사용하는데 입력할 수 있는 값의 크기가 Int 보다 작음.
+     * 3) Short 와 Byte : 정수
+     * 역시 정숫값을 저장할 때 사용하는데 입력 할 수 있는 값의 크기가 Int 보다 작음.
      */
     var shortValue: Short = 32_767
     var byteValue: Byte = 127
@@ -87,9 +88,12 @@ fun main() {
     println(char)
     println(string)
 
+    var char2 = "a" // String 으로 타입추론
+//    var string3 = 'abc' // Too many characters in a character literal ''abc'' 오류
     /*
+
      * 1) Char : 문자형
-     * Char는 타입을 특정하지 않아도 외따옴표 안에 하나의 글자만 저장하기 때문에 Char
+     * Char 는 타입을 특정하지 않아도 외따옴표 안에 하나의 글자만 저장하기 때문에 Char
      */
 
     /*
@@ -106,8 +110,7 @@ fun main() {
     println(isTure)
 
     /*
-     * 읽기 전용 변수 val
-     * 변수의 다른 선언 방법으로는 읽기 전용 ~~ 캡처
+     * 읽기 전용 변수 val 선언하는 방법은 변수와 동일하며 이름 옆에 val 을 붙이면 읽기 전용 변수가 됨.
      */
     // val 변수명(이름) = 값
     val roadName = "귝제금융로"
