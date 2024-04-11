@@ -14,6 +14,7 @@ fun main() {
     for (n in numbers.indices) {
         numbers[n] = n + 1
     }
+    //
     println("main() : ")
     for (i in numbers.indices) {
         println(numbers[i])

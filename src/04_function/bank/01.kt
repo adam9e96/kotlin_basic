@@ -1,4 +1,4 @@
-package `04_function`
+package `04_function`.bank
 
 /**
  * fileName       : `08_exam05`
@@ -20,18 +20,18 @@ fun main() {
     var idx = 0 // 생성된 계좌수
     var run = true
 
-    anos[0] = "123"
-    anos[1] = "234"
-    anos[2] = "345"
-
-    owners[0] = "홍길동"
-    owners[1] = "박수동"
-    owners[2] = "김길수"
-
-    balances[0] = 1000
-    balances[1] = 2000
-    balances[2] = 3000
-    idx = 3
+//    anos[0] = "123"
+//    anos[1] = "234"
+//    anos[2] = "345"
+//
+//    owners[0] = "홍길동"
+//    owners[1] = "박수동"
+//    owners[2] = "김길수"
+//
+//    balances[0] = 1000
+//    balances[1] = 2000
+//    balances[2] = 3000
+//    idx = 3
 
 
     while (run) {
@@ -47,7 +47,7 @@ fun main() {
             3 -> deposit(anos, balances, idx)
             4 -> withdraw(anos, balances, idx)
             5 -> viewAccount(anos, owners, balances, idx)
-            6 -> run = false // 	6. 종료 : 프로그램을 종료합니다.
+            6 -> run = false
         }
 //        println("=====")
 //        println("계좌 생성 테스트")
@@ -62,11 +62,7 @@ fun main() {
     println("프로그램 종료")
 }
 
-/**
- * 	1.계좌 생성:
- *
- * 	새로운 계좌를 생성합니다. 사용자로부터 계좌번호, 계좌주, 초기 입금액을 입력 받아 배열에 저장합니다.
- */
+
 fun createAccount(anos: Array<String>, owners: Array<String>, balances: IntArray, idx: Int, max: Int): Int {
     // 계좌 생성
     println("계좌수 테스트 : $idx")
@@ -90,23 +86,12 @@ fun createAccount(anos: Array<String>, owners: Array<String>, balances: IntArray
     return idx + 1
 }
 
-/**
- * 2.계좌 목록 조회
- *
- * 	현재 생성된 모든 계좌의 정보(계좌번호, 예금주, 잔액)를 출력합니다.
- *
- */
 fun viewAccountList(anos: Array<String>, owners: Array<String>, balances: IntArray, idx: Int) {
-    for (i in 0..<idx) {
+    for (i in 0 until idx) {
         println("${anos[i]} ${owners[i]} ${balances[i]}")
     }
 }
 
-/**
- * 	3.예금
- *
- * 	지정된 계좌번호에 대해 예금액을 입력 받고, 해당 계좌의 잔액을 증가시킵니다.
- */
 fun deposit(anos: Array<String>, balances: IntArray, idx: Int) {
     println("--------------")
     println("예금")
@@ -115,7 +100,6 @@ fun deposit(anos: Array<String>, balances: IntArray, idx: Int) {
     val ano: String = readln().trim()
     print("예금액: ")
     val money: Int = readln().trim().toInt()
-    // todo money에도
     val i = findAccount(ano, anos, idx)
 
     if (money <= 0) {
@@ -130,30 +114,8 @@ fun deposit(anos: Array<String>, balances: IntArray, idx: Int) {
         println("계좌를 잘못입력하였습니다.")
         return
     }
-
-
-//    var isFound = false
-
-
-//    for (i in 0 until idx) {
-//        if (ano.equals(anos[i])) {
-//            balances[i] = balances[i] + money
-//            isFound = true
-//            println("결과: 예금이 성공되었습니다.")
-//            break
-//        }
-//    }
-//    if (!isFound) {
-//        println("계좌를 잘못입력하였습니다.")
-//    }
-
 }
 
-/**
- * 4.출금
- *
- * 지정된 계좌번호에 대해 출금액을 입력 받고, 해당 계좌의 잔액을 감소시킵니다. 단, 출금액이 계좌의 잔액보다 클 경우 출금이 실패합니다.
- */
 fun withdraw(anos: Array<String>, balances: IntArray, idx: Int) {
     println("--------------")
     println("출금")
@@ -180,33 +142,8 @@ fun withdraw(anos: Array<String>, balances: IntArray, idx: Int) {
     } else {
         println("계좌를 잘못입력하였습니다.")
     }
-
-//    var isFound = false
-
-//    for (i in 0 until idx) {
-//        if (ano.equals(anos[i])) {
-//            if (balances[i] > money) {
-//                balances[i] = balances[i] - money
-//                isFound = true
-//                println("결과 : 출금이 성공되었습니다.")
-//                break
-//            } else {
-//                println("결과 : 잔액보다 출금액이 커서 출금에 실패했습니다.")
-//            }
-//        }
-//    }
-//    if (!isFound) {
-//        println("계좌를 잘못입력하였습니다.")
-//    }
-
-
 }
 
-/**
- * 	5.계좌 조회
- *
- * 	지정된 계좌번호의 계좌 정보를 조회하여 출력합니다.
- */
 fun viewAccount(anos: Array<String>, owners: Array<String>, balances: IntArray, idx: Int) {
     println("--------------");
     println("조회");
@@ -220,30 +157,13 @@ fun viewAccount(anos: Array<String>, owners: Array<String>, balances: IntArray, 
     } else {
         println("계좌가 없습니다.")
     }
-//    var isFound = false
-//    for (i in 0 until idx) {
-//        if (ano.equals(anos[i])) {
-//            println("${anos[i]} ${owners[i]} ${balances[i]}")
-//            isFound = true
-//            break
-//        }
-//    }
-//    if (!isFound) {
-//        println("계좌가 없습니다.")
-//    }
-
 }
 
-/**
- * (중복코드개선) 계죄 조회 함수 (#3.4.5에서 사용)
- * 단순히 입력한 계좌번호(ano)와 배열에 저장(anos)된 계좌번호를 조회하는 함수
- * 반환값으로 인덱스값을 돌려줌. 없으면 -1
- */
 fun findAccount(ano: String, anos: Array<String>, idx: Int): Int {
-    for (i in 0..<idx) {
-        if (ano == anos[i])
+    for (i in 0 until idx) {
+        if (ano.equals(anos[i])) {
             return i
-
+        }
     }
     return -1
 }
