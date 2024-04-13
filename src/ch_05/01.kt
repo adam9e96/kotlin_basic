@@ -4,6 +4,7 @@ package ch_05
  * fileName       : `01`
  * date           : 2024-04-12
  * time           : 오후 2:06
+ * 복습            : 2024-04-13,
  * ===========================================================
  * description    :
  *
@@ -69,6 +70,7 @@ fun main() {
     mutableList.add("JACK")
     mutableList.add("RALO")
     println(mutableList) // [MON, TUE, WED, THU, JACK, RALO]
+    println(mutableList.size) // 6
 
     mutableList.remove("RALO")
 
@@ -86,8 +88,8 @@ fun main() {
 //    var variable = mutableList.get(1) // 두 번째 값을 변수에 저장.
     var variable = mutableList[1] // 두 번째 값을 변수에 저장.
     println(variable) // TUE
-    variable =  mutableList[1]
-    println(variable)
+    variable = mutableList[1]
+    println(variable) // TUE
 
 
     /**
@@ -96,12 +98,13 @@ fun main() {
      *
      *  여기도 2가지 방법이 있다.
      */
-    mutableList.set(1,"수정할 값") // 두번째 값을 수정.
+    mutableList.set(1, "수정할 값") // 두번째 값을 수정.
     println(mutableList) // [MON, 수정할 값, WED, THU, JACK]
     mutableList[1] = "수정할 값" // 두번째 값을 수정
-    println(mutableList)
+    println(mutableList) // [MON, 수정할 값, WED, THU, JACK]
 
-    for (item in mutableList){
+
+    for (item in mutableList) {
         println(item)
     }
     /*
@@ -111,7 +114,7 @@ fun main() {
     THU
     JACK
      */
-    for ((index, value) in mutableList.withIndex()){
+    for ((index, value) in mutableList.withIndex()) {
         println("$index : $value")
     }
     /*
@@ -152,7 +155,7 @@ fun main() {
     println(stringList[1])
 
     // 수정
-    stringList.set(1,"수정함화")
+    stringList.set(1, "수정함화")
 
     // 삭제
     stringList.removeAt(1)
@@ -164,6 +167,4 @@ fun main() {
      *
      */
     println("stringList 에는 ${stringList.size}개의 값이 있습니다.") // stringList 에는 1개의 값이 있습니다.
-
-
 }
