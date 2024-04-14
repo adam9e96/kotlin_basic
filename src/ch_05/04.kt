@@ -56,6 +56,6 @@ fun main() {
     map.remove("키1")
 
     // 없는 값을 불러오면 null 이 출력됨
-    println("map 에 입력된 키1의 값은 ${map.get("키1")}입니다.") // map 에 입력된 키1의 값은 null입니다.
+    println("map 에 입력된 키1의 값은 ${map.get("키1")}입니다.") // map 에 입력된 키1의 값은 null 입니다.
 
 }

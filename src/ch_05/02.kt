@@ -34,5 +34,4 @@ fun main() {
         println(item)
     }
 
-    // filter 함수
 }

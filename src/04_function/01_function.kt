@@ -15,6 +15,6 @@ fun circleArea(radius: Double): Double {
 
 fun main() {
     print("Enter radius : ")
-    val radius = readLine()!!.toDouble()
+    val radius = readln().toDouble()
     println("Circle area : ${circleArea(radius)}")
 }

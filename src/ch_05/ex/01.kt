@@ -158,12 +158,6 @@ class BookManager {
 
 fun main() {
     val manager = BookManager()
-//        Book = Book()
-//    Book[0] = (1000, "홍길동", "1000",1000)
-
-
-    // 테스트 코드 start
-//    exam.exam02.Main.accounts.get(0) = Account("123", "홍길동", 1000)
 
     while (true) {
         printMenu()
