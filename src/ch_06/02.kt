@@ -22,7 +22,11 @@ object Cat {
         println("Cat의 이름은 ${name}입니다.")
     }
 }
-
+/*
+  1. 컴패니언 오브젝트 companion object
+  companion object 는 일반 클래스에 object 기능을 추가하기 위해서 사용.
+  클래스 코드 안에 companion object 블록으로 감싸주면 생성과정없이 오브젝트 처럼 사용할 수 있음.
+ */
 fun main() {
     Cat.name = "minky"
     Cat.prinName() // Cat의 이름은 minky입니다.
