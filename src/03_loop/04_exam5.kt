@@ -2,19 +2,19 @@ package `03_loop`
 
 fun main() {
     /*
-     * 음수가 입력될 때까지, 사용자가 입력한 정수의 합계를 계산하여 출력하는 프로그램을 작성하세요.
-	 * while문을 사용, break 사용하지 말 것
-	 * 1) while문으로 작업
-	 * 2) do while문으로 작업
+     * 쓬닔媛 엯젰맆 븣源뚯, 궗슜옄媛 엯젰븳 젙닔쓽 빀怨꾨 怨꾩궛븯뿬 異쒕젰븯뒗 봽濡쒓렇옩쓣 옉꽦븯꽭슂.
+	 * while臾몄쓣 궗슜, break 궗슜븯吏 留 寃
+	 * 1) while臾몄쑝濡 옉뾽
+	 * 2) do while臾몄쑝濡 옉뾽
      */
 
-    // 사용자가 정수를 입력함
+    // 궗슜옄媛 젙닔瑜 엯젰븿
     var value = 0
     var sum: Int = 0
     while (value >=0) {
-        println("정수를 입력하세요.")
+        println("젙닔瑜 엯젰븯꽭슂.")
         value = readln().toInt()
         sum += value
     }
-    println("누적 합 : ${sum}")
+    println("늻쟻 빀 : ${sum}")
 }
