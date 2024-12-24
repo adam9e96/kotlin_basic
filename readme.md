@@ -8,9 +8,9 @@
 ├─out
 │  └─production
 │      └─kotlin_basic
-│          ├─01
+│          ├─ch1
 │          └─META-INF
 └─src
-    └─01
+    └─ch1
 
 ```
